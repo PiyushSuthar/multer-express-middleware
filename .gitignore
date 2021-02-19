@@ -1,0 +1,4 @@
+node_modules
+uploads
+tests
+yarn.lock

@@ -1,0 +1,15 @@
+{
+  "name": "image_handler",
+  "version": "0.0.1",
+  "main": "server.js",
+  "author": "Piyush Suthar",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5"
+  }
+}
