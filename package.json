@@ -1,5 +1,5 @@
 {
-  "name": "image_handler",
+  "name": "multer-express-middleware",
   "version": "0.0.2",
   "main": "index.js",
   "author": "Piyush Suthar",
