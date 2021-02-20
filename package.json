@@ -4,6 +4,12 @@
   "main": "index.js",
   "author": "Piyush Suthar",
   "license": "MIT",
+  "homepage": "https://github.com/PiyushSuthar/multer-express-middleware#readme",
+  "keywords": ["express", "multer", "middleware", "image store"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PiyushSuthar/multer-express-middleware.git"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "multer": "^1.4.2"
