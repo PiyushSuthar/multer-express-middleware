@@ -1,4 +1,4 @@
-<h1 align="center">Image Store Middleware ♻ </h1>
+<h1 align="center">Multer Express Middleware ♻ </h1>
 <p align="center">A weekend project that will help you to easily setup multer with just a middleware. 🌈</p>
 <p align="center">
   <a href="https://github.com/PiyushSuthar/image-store-middleware"><img alt="GitHub license" src="https://img.shields.io/github/license/PiyushSuthar/image-store-middleware?style=for-the-badge"></a>
