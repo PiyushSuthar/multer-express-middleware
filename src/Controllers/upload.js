@@ -6,8 +6,8 @@ const fs = require('fs')
  * @param {String} str 
  * @returns ex. foo bar to foo-bar 
  */
-exports.parseText = str => str.toString().replace(/\s+/g, '-').toLowerCase()
-const parseText = this.parseText
+const parseText = str => str.toString().replace(/\s+/g, '-').toLowerCase()
+exports.parseText = parseText
 
 // Image store
 /**

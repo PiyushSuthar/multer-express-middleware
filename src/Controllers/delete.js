@@ -1,5 +1,4 @@
 // @ts-check
-const path = require('path')
 const fs = require('fs')
 
 const deleteImage = filePath => {
@@ -32,7 +31,7 @@ exports.handleDelete = ({ destination = "uploads", filePathProperty = "imagePath
         if (fs.existsSync(imagePath)) {
             // fs.rmSync(imagePath)
             const { success, error, message } = deleteImage(imagePath)
-            return res.status(error ? 400 : 204).json({
+            return res.status(error ? 404 : 204).json({
                 success,
                 message,
                 error
@@ -44,7 +43,7 @@ exports.handleDelete = ({ destination = "uploads", filePathProperty = "imagePath
             message: "Looks like the image path is not available."
         })
     } catch (err) {
-        res.json({
+        res.status(500).json({
             success: false,
             error: err
         })
