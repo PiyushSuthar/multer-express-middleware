@@ -96,4 +96,18 @@ export type options = {
             filePathProperty: string
         }
     }
+
+    /**
+     * Middlewares you would like to have for the routes...
+     * 
+     * `Example Usage`:-
+     * ```js
+     * app.use("/api", imageStore({
+            destination: "uploads",
+            imageProperty: "image",
+            middlewares: [isSignedIn, isAuthenticated]
+        }))
+     * ```
+     */
+    middlewares: Array<any>
 }

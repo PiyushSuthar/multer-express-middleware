@@ -4,12 +4,29 @@
 const express = require('express')
 const router = express.Router()
 const multer = require('multer')
+const { handleDelete } = require('./Controllers/delete')
 const { ImageStore, handleAfterUpload } = require('./Controllers/upload')
-const { v4: uuidV4 } = require("uuid")
 
 /**
+ * Multer easy Image store `express middleware`
  * 
- * @param {options} options 
+ * `Example usage`:-
+ * ```js
+ * app.use("/api", imageStore({
+        destination: "uploads",
+        imageProperty: "image",
+        customize: {
+            upload: {
+                folderProperty: "folderName",
+                subFolderProperty: "subfolderName"
+            },
+            delete: {
+                filePathProperty: "imagePath"
+            }
+        }
+    }))
+ * ```
+ * @param {options} options Configure the Store ;)
  */
 module.exports = function (options) {
     // Creating Multer engine
@@ -21,8 +38,20 @@ module.exports = function (options) {
         })
     })
 
+    // Using Middlewares if passed...
+    if(options.middlewares){
+        router.use(options.middlewares)
+    }
+    router.use(express.json())
+
     // Route for uploading image
     router.post(options?.customize?.upload?.path || "/image/upload", upload.single(options.imageProperty || "image"), handleAfterUpload)
+
+    // Route for deleteing images
+    router.post(options?.customize?.delete?.path || "/image/delete", handleDelete({
+        filePathProperty: options?.customize?.delete?.filePathProperty || "path",
+        destination: options.destination
+    }))
 
     return router
 }
